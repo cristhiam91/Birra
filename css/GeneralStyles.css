@@ -10,6 +10,7 @@
     background-attachment: fixed;
 }
 
+
 #contenedorAdmin {
     height: 450px;
     width: 250px;
@@ -20,13 +21,7 @@
     margin-top: 180px;
 }
 
-#contenedorDatos{
-    background-color: #abdde5;
-}
 
-#contenedorBotones{
-    width: 240px;
-}
 
 #cardMenuUsuarios{
     height: 550px;
@@ -38,10 +33,25 @@
     margin-top: 160px;
 }
 
+/********************************Login*************************************************/
+#contenedorLogin{
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+  margin-top: 160px
+}
+
+
+
+
 /*********************Buscar usuarios admin***************************************/
 #cardMenuBusqueda{
     height: 550px;
-    width: 240px;
+    width: 600px;
     background-color: rgba(229, 228, 255, 0.3);   
     margin: 0 auto; /* Added */
     float: none; /* Added */

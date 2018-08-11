@@ -19,25 +19,27 @@ and open the template in the editor.
 
     </head>
     <body>
-        <div class="card-body" id="cardCrearUsuario">
-            <h2 class="card-title">Crear usuario</h2>
-            <form method="post" action="procesos.php">
-                <input class="form-control" type="text" name="cedula" placeholder="Cedula" value=""><br>        
-                <input class="form-control" type="text" name="nombre" placeholder="Nombre" value=""><br>      
-                <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" value=""><br>
-                <input class="form-control" type="text" name="telefono" placeholder="Telefono" value=""><br>      
-                <input class="form-control" type="text" name="email" placeholder="Email" value=""><br>
-                <input class="form-control" type="text" name="nombre_de_usuario" placeholder="Nombre de usuario" value=""><br>
-                <input class="form-control" type="password" name="contrasena" placeholder="Contrasena" value=""><br>
-                <select class="form-control" name="rol">    
-                    <option value="0">Seleccione</option>
-                    <option value="admin">Administrador </option>
-                    <option value="comun">Usurio comun </option>
-                </select><br>
-                <input type="hidden" name="accion" value="crear-usuario">
-                <a href="menu-usuarios.php"class="btn btn-primary" style="float: left;">Regresar</a>
-                <input type="submit" name="btnCreaUsuario" value="Crear" class="btn btn-success" style="float: right">  
-            </form>
+        <div class="container">
+            <div class="card-body" id="cardCrearUsuario">
+                <h2 class="card-title">Crear usuario</h2>
+                <form method="post" action="procesos.php">
+                    <input class="form-control" type="text" name="cedula" placeholder="Cedula" value=""><br>        
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombre" value=""><br>      
+                    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" value=""><br>
+                    <input class="form-control" type="text" name="telefono" placeholder="Telefono" value=""><br>      
+                    <input class="form-control" type="text" name="email" placeholder="Email" value=""><br>
+                    <input class="form-control" type="text" name="nombre_de_usuario" placeholder="Nombre de usuario" value=""><br>
+                    <input class="form-control" type="password" name="contrasena" placeholder="Contrasena" value=""><br>
+                    <select class="form-control" name="rol">    
+                        <option value="0">Seleccione</option>
+                        <option value="admin">Administrador </option>
+                        <option value="comun">Usurio comun </option>
+                    </select><br>
+                    <input type="hidden" name="accion" value="crear-usuario">
+                    <a href="menu-usuarios.php"class="btn btn-primary" style="float: left;">Regresar</a>
+                    <input type="submit" name="btnCreaUsuario" value="Crear" class="btn btn-success" style="float: right">  
+                </form>
+            </div>
         </div>
     </body>
 </html>

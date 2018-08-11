@@ -18,24 +18,25 @@ and open the template in the editor.
     <link href="css/GeneralStyles.css" rel="stylesheet" type="text/css"/>
 
     <body>
-        <div class="table-responsive"></div>
+        <div class="container">
         <form method="post" action="procesos.php">
-            <!--
+            
                         <select name="Filtro">    
                             <option value="2">Todos</option>
                             <option value="admin">admin </option>
                             <option value="comun">comun </option>
                         </select><br>
                         <input type="hidden" name="accion" value="listar-usuario">
-                        <input type="submit" name="btnListarUsuario" value="Listar">        -->
+                        <input type="submit" name="btnListarUsuario" value="Listar">        
         </form>
         <?php
         session_start();
         if (isset($_SESSION["lista-usuarios"])) {
             if (count($_SESSION["lista-usuarios"]) > 0) {
+                   echo '<div class="table-responsive">';
+                    echo '<table class="table table-warning">';
                 foreach ($_SESSION["lista-usuarios"] as $usuario) {
-                    echo '<div class="table-responsive">';
-                    echo '<table class="table table-dark">';
+                 
                     echo '<thead>';
                     echo '<tr>';
                     echo '<th>Cedula</th>';
@@ -53,11 +54,14 @@ and open the template in the editor.
                     echo '<td>'.$usuario["rol"]. '</td>';
                     echo '</tr>';
                     echo '</tbody>';
+                
+                }
                     echo" </table>";
                    echo '</div">';
-                }
             }
         }
         ?>
+ 
+            </div>
     </body>
 </html>

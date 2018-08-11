@@ -8,13 +8,13 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
 
-        <title></title>
+        <title>Login</title>
         <script src="js/jquery/external/jquery/jquery.js" type="text/javascript"></script>      
         <script src="js/Boostrapjs/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/Boostrapjs/bootstrap.bundle.min.js.map" type="text/javascript"></script>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/GeneralStyles.css" rel="stylesheet" type="text/css"/>
-        <link href="css/GeneralStyles.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <div class="card-body" id="cardMenuUsuarios">

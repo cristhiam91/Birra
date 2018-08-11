@@ -19,20 +19,22 @@ and open the template in the editor.
 
     </head>
     <body>
-        <div class="card-body" id="cardMenuBusqueda">
-            <h3 class="card-title">Buscar usuario</h3>
-            <form id="frmBusqueda" method="post">
-                <div class="active-cyan-3 active-cyan-4 mb-4">
-                    <input class="form-control" type="text" id="cedulaBusqueda" name="cedulaBusqueda" value="" placeholder="Digite la cedula"/>
-                </div>      
-                <input type="button" id="btnBuscar" name="btnBuscar" value="Buscar" class="btn btn-info" style="float: right;">
-                <p><a href="menu-usuarios.php"class="btn btn-primary" style="float: left;">Regresar</a></p><br>
+        <div class="container">
+            <div class="card-body" id="cardMenuBusqueda">
+                <h3 class="card-title">Buscar usuario</h3>
+                <form id="frmBusqueda" method="post">
+                    <div class="active-cyan-3 active-cyan-4 mb-4">
+                        <input class="form-control" type="text" id="cedulaBusqueda" name="cedulaBusqueda" value="" placeholder="Digite la cedula"/>
+                    </div>      
+                    <input type="button" id="btnBuscar" name="btnBuscar" value="Buscar" class="btn btn-info" style="float: right;">
+                    <p><a href="menu-usuarios.php"class="btn btn-primary" style="float: left;">Regresar</a></p><br>
 
-            </form> 
-            <div class="frm-actualizar" id="mostarDatosBusqueda">
-                
+                </form> 
+                <div class="frm-actualizar" id="mostarDatosBusqueda">
+
+                </div>
+                <br/>
             </div>
-            <br/>
         </div>
     </body>
 </html>

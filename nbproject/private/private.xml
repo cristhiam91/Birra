@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>css/GeneralStyles.css</url>
+            <bookmark id="1">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Birra/ActualizaUsuario.php</file>
             <file>file:/C:/xampp/htdocs/Birra/css/GeneralStyles.css</file>
-            <file>file:/C:/xampp/htdocs/Birra/BuscarUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/Birra/CrearUsuario.php</file>
+            <file>file:/C:/xampp/htdocs/Birra/ListarUsuarios.php</file>
+            <file>file:/C:/xampp/htdocs/Birra/index.php</file>
         </group>
     </open-files>
 </project-private>

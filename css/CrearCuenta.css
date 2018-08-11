@@ -1,0 +1,45 @@
+﻿body {
+    margin-top: 40px;
+    margin: 0;
+    min-height: 60vh;
+    background-image: url("../Backgrouds/FondoCrearCuenta.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body:before {
+        content: "";
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #ffffff,#ffffff);
+        opacity: 0.4;
+}
+
+#CrearCuenta {
+    margin-top: 200px;
+    height: auto;
+    width: 500px;
+    background-color: white;
+}
+#formCrearCuenta{
+    margin-top: 200px;
+    height: auto;
+    width: 100px;
+    background-color: white;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}

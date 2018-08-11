@@ -1,0 +1,113 @@
+﻿body {
+    margin-top: 40px;
+    margin: 0;
+    min-height: 60vh;
+    background-image: url("../Backgrouds/FondoAdmin.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#contenedorAdmin {
+    height: 450px;
+    width: 250px;
+    background-color: rgba(229, 228, 255, 0.2);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 180px;
+}
+
+#contenedorDatos{
+    background-color: #abdde5;
+}
+
+#contenedorBotones{
+    width: 240px;
+}
+
+#cardMenuUsuarios{
+    height: 550px;
+    width: 200px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 160px;
+}
+
+/*********************Buscar usuarios admin***************************************/
+#cardMenuBusqueda{
+    height: 550px;
+    width: 240px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 160px;  
+}
+
+
+#mostarDatosBusqueda{
+    margin-top: 60px;
+}
+
+/*********************Crear usuario***************************************/
+
+
+#cardCrearUsuario{
+    height: 620px;
+    width: 240px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 100px; 
+}
+
+/*********************ELiminar usuario***************************************/
+
+
+#cardEliminarUsuario{
+    height: 800px;
+    width: 240px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 60px;    
+}
+
+#frmEliminarUsuario{
+    
+}
+
+
+/*--------------------------*Menu articulos-------------------------------------*/
+#cardMenuArticulos{
+    height: 550px;
+    width: 200px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 160px; 
+}
+
+
+
+
+/***********************Menu compras*************************************/
+#cardMenuCompras{
+    height: 550px;
+    width: 200px;
+    background-color: rgba(229, 228, 255, 0.3);   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 160px;  
+}
+
+

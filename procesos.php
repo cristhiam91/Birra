@@ -59,6 +59,9 @@ switch ($accion) {
     case "listar-articulos":
         $Articulo->ListarArticulo($_POST["Filtro"]);
         break;
+    case "ver-articulos":
+        $Articulo->VerArticulos($_POST["Filtro"]);
+        break;
     case "eliminar-articulo":
         $Articulo->EliminarArticulo($_POST);
         header("Location: menu-articulos.php");

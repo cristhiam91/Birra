@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  * Description of ClaseCompra
@@ -24,7 +19,7 @@ class ClaseCompra {
 
 
     function __construct() {
-        
+
     }
 
     function getId() {
@@ -79,15 +74,15 @@ class ClaseCompra {
 //        $sql.="telefono = '" . $datos["telefono"] ."', email = '" . $datos["email"] ."', nombre_de_usuario = '" . $datos["nombre_de_usuario"]."',";
 //        $sql.="contrasena = '" . $datos["contrasena"] ."', rol = '" . $datos["rol"]. "'";
 //        $dbresponse = $conn->db->query($sql);
-       
+
          $conn = Database::getInstance();
         $sql="INSERT INTO usuario (cedula, nombre, apellidos, telefono,email,nombre_de_usuario,contrasena,rol) VALUES (";
         $sql.= "'".$datos["cedula"] ."','" . $datos["nombre"] ."','" . $datos["apellidos"] ."',";
         $sql.=$datos["telefono"] .",'" . $datos["email"] ."','" . $datos["nombre_de_usuario"]."','";
         $sql.=$datos["contrasena"] ."','" . $datos["rol"] . "')";
         $dbresponse = $conn->db->query($sql);
-       
-       
+
+
         if ($dbresponse == true) {
             echo 'Usuario insertado con exito';
         } else {
@@ -128,14 +123,14 @@ class ClaseCompra {
         $sql.="numero_factura = '" . $datos["numero_factura"] ."', fecha_compra = '" . $datos["fecha_compra"] . "'";
         $sql .= " WHERE id = '" . $datos["id"] . "'";
         $dbresponse = $conn->db->query($sql);
-        
+
         if($dbresponse  == true){
-            $valido["valido"] = true;            
+            $valido["valido"] = true;
         }else{
             $valido["valido"] = false;
         }
-        
-        return $valido;      
+
+        return $valido;
     }
 
     function BuscarCompra($data) {
@@ -151,7 +146,7 @@ class ClaseCompra {
         }
         return $valido;
     }
-    
+
        function BuscarCompraFactura($data) {
         $conn = Database::getInstance();
         $dbresponse = $conn->db->query("SELECT * FROM compras WHERE numero_factura='" . $data["compraBusquedaFactura"] . "' ");
@@ -169,7 +164,7 @@ class ClaseCompra {
        function ListarMisCompras($filtro) {
         $conn = Database::getInstance();
         $dbresponse = $conn->db->query("SELECT * FROM compras WHERE id_usuario= " .$filtro);
-        session_start();        
+        session_start();
         $_SESSION["lista-compras"] = array();
           foreach ($dbresponse->fetchAll(PDO::FETCH_ASSOC) as $compra) {
             array_push($_SESSION["lista-compras"], $compra);
@@ -177,7 +172,7 @@ class ClaseCompra {
 
         header("Location: ListarMisCompras.php");
     }
-    
+
 
 //Cierre de la clase
 }

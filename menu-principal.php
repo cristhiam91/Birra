@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <script src="js/jquery/external/jquery/jquery.js" type="text/javascript"></script>      
+        <script src="js/jquery/external/jquery/jquery.js" type="text/javascript"></script>
         <script src="js/Boostrapjs/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/Boostrapjs/bootstrap.bundle.min.js.map" type="text/javascript"></script>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -34,22 +34,26 @@ and open the template in the editor.
                     <p><a class="btn btn-dark" href="menu-usuarios.php" >Administrar Usuarios</a></p><br>
                     <p><a class="btn btn-dark" href="menu-articulos.php">Administrar articulos</a></p><br>
                     <p><a class="btn btn-dark" href="menu-compras.php">Administar compras</a></p><br>
-                    <form method="post" action="procesos.php">            
+                    <p><a class="btn btn-dark" href="home.php">Ir a inicio</a></p><br>
+                    <form method="post" action="procesos.php">
                         <input type="hidden" name="accion" value="Logout">
-                        <input type="submit" name="btnLogout" value="Cerrar sesion" class="btn btn-primary">            
+                        <input type="submit" name="btnLogout" value="Cerrar sesion" class="btn btn-primary">
                     </form>
             </div>
         </div>
         <?php
     } else if ($_SESSION["datos-usuario"]["rol"] == "comun") {
-        ?>  <br>
-        <p><a href="MiPerfil.php" id="miPerfil">Mi Perfil</a></p><br>
-        <p><a href="MisCompras.php" >Mis Compras</a></p><br>
-        <p><a href="Comprar.php" >Comprar</a></p><br>
-        <form method="post" action="procesos.php">            
-            <input type="hidden" name="accion" value="Logout">
-            <input type="submit" name="btnLogout" value="Cerrar sesion">            
-        </form>
+        // include "home.php";
+        header("Location: home.php");
+
+        ?>  <!-- <br> -->
+        <!-- <p><a href="MiPerfil.php" id="miPerfil">Mi Perfil</a></p><br> -->
+        <!-- <p><a href="MisCompras.php" >Mis Compras</a></p><br> -->
+        <!-- <p><a href="Comprar.php" >Comprar</a></p><br> -->
+        <!-- <form method="post" action="procesos.php"> -->
+            <!-- <input type="hidden" name="accion" value="Logout"> -->
+            <!-- <input type="submit" name="btnLogout" value="Cerrar sesion"> -->
+        <!-- </form> -->
 
         <?php
     }

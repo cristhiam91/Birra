@@ -12,7 +12,7 @@ class ClaseArticulo {
     private $imagen;
 
     function __construct() {
-        
+
     }
     function getCodigo() {
         return $this->codigo;
@@ -62,7 +62,7 @@ class ClaseArticulo {
         $this->imagen = $imagen;
     }
 
-    
+
     function CrearArticulo($datos) {
         $conn = Database::getInstance();
         $sql="INSERT INTO articulos (codigo, marca, detalle, precio,cantidad,imagen) VALUES (";
@@ -98,6 +98,19 @@ class ClaseArticulo {
         }
 
         header("Location: ListarArticulo.php");
+    }
+
+    function VerArticulos($filtro) {
+
+        $conn = Database::getInstance();
+        $dbresponse = $conn->db->query("SELECT * FROM articulos");
+        session_start();
+        $_SESSION["lista-articulos"] = array();
+        foreach ($dbresponse->fetchAll(PDO::FETCH_ASSOC) as $articulo) {
+            array_push($_SESSION["lista-articulos"], $articulo);
+        }
+
+        header("Location: VerProductos.php");
     }
 
     function ActualizarArticulo($datos) {

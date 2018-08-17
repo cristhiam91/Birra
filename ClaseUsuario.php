@@ -14,7 +14,7 @@ class ClaseUsuario {
     private $rol;
 
     function __construct() {
-        
+
     }
 
     function getCedula() {

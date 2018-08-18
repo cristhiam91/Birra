@@ -2,12 +2,12 @@
 <!-- Footer, needs bootstrap -->
 <!-- Footer -->
 
-<footer class="page-footer font-small indigo bg-dark text-light absolute-bottom">
+<footer class="page-footer font-small indigo bg-dark text-light fixed-bottom">
 
 
   </div>
-    <div class="footer-copyright text-center py-2">
-      <div class="mb-2">
+    <div class="footer-copyright text-center">
+      <div class="mb-1">
         Jose Acuña - Cristhiam Mena<br>
       </div>
 

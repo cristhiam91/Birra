@@ -10,9 +10,9 @@
     </head>
     <body>
         <form id="frmBusqueda" method="post">
-            <input type="text" id="articuloBusqueda" name="articuloBusqueda" value="" placeholder="Digite el codigo"/>
+            <input type="text" id="codigo" name="codigo" value="" placeholder="Digite el codigo"/>
             <input type="button" id="btnBuscar" name="btnBuscar" value="Buscar">
-        </form> 
+        </form>
         <div class="frm-actualizar">
 
         </div>

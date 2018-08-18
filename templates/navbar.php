@@ -8,9 +8,12 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="btn btn-warning" href="home.php">Inicio <span class="sr-only">(current)</span></a>
-      </li>
+        <li class="nav-item">
+          <form method="post" action="procesos.php">
+              <input type="hidden" name="accion" value="home-articulos">
+              <input type="submit" class="btn btn-warning" name="btnHome" value="Inicio">
+          </form>
+        </li>
       <li class="nav-item">
         <form method="post" action="procesos.php">
             <input type="hidden" name="accion" value="ver-articulos">
@@ -20,7 +23,13 @@
             <!-- <a class="nav-link" href="VerProductos.php">Tienda</a> -->
       </li>
       <li class="nav-item">
-        <a class="btn btn-warning" href="MisCompras.php">Carrito</a>
+        <form method="post" action="procesos.php">
+            <input type="hidden" name="accion" value="ver-carrito">
+            <input type="submit" class="btn btn-warning" name="btnVerCarrito" value="Carrito">
+        </form>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-warning" href="MisCompras.php">Mis Compras</a>
       </li>
       <li class="nav-item">
         <a class="btn btn-warning" href="MiPerfil.php">Perfil</a>

@@ -14,11 +14,11 @@ and open the template in the editor.
         <?php
         session_start();
         $_SESSION["datos-usuario"]["cedula"];
-        ?> 
+        ?>
         <form method="post" action="procesos.php">
         <input type="hidden" id="cedulaUsuario" name="cedulaUsuario" value="<?php echo $_SESSION["datos-usuario"]["cedula"]; ?>" placeholder=""/>
             <input type="hidden" name="accion" value="listar-MisCompras">
-            <input type="submit" name="btnListarCompra" value="Listar">        
+            <input type="submit" name="btnListarCompra" value="Listar">
         </form>
 
         <?php
@@ -29,7 +29,6 @@ and open the template in the editor.
                     echo '<p>Id: ' . $compra["id"] . '</p>';
                     echo '<p>Id usuario: ' . $compra["id_usuario"] . '</p>';
                     echo '<p>Id Articulo: ' . $compra["id_articulo"] . '</p>';
-                    echo '<p>Numero de factura: ' . $compra["numero_factura"] . '</p>';
                     echo '<p>Fecha de compra: ' . $compra["fecha_compra"] . '</p>';
                 }
             }

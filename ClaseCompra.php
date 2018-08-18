@@ -65,29 +65,19 @@ class ClaseCompra {
 
 
 //Permite agregar nuevo usuario
-    function CrearCompra($datos) {
+    function CrearCompra() {
+      session_start();
+      $conn = Database::getInstance();
+       foreach ($_SESSION["mis-productos"] as $producto) {
 
-       //$dbresponse = $conn->db->query("INSERT INTO usuario(cedula) VALUES ('".$datos["cedula"].")");
+          $sql="INSERT INTO compras (id_usuario, id_articulo) VALUES (";
+          $sql.= "'". $_SESSION["datos-usuario"]["cedula"] ."','" . $producto["codigo"] . "'); ";
+          $dbresponse = $conn->db->query($sql);
+       }
 
-//        $sql="INSERT INTO usuario VALUES ";
-//        $sql.="cedula = '" . $datos["cedula"] ."', nombre = '" . $datos["nombre"] ."', apellidos = '" . $datos["apellidos"] ."',";
-//        $sql.="telefono = '" . $datos["telefono"] ."', email = '" . $datos["email"] ."', nombre_de_usuario = '" . $datos["nombre_de_usuario"]."',";
-//        $sql.="contrasena = '" . $datos["contrasena"] ."', rol = '" . $datos["rol"]. "'";
-//        $dbresponse = $conn->db->query($sql);
+       $sql="DELETE FROM itemcarrito WHERE idcarrito ='" . $_SESSION["datos-usuario"]["cedula"] . "'";
+       $dbresponse = $conn->db->query($sql);
 
-         $conn = Database::getInstance();
-        $sql="INSERT INTO usuario (cedula, nombre, apellidos, telefono,email,nombre_de_usuario,contrasena,rol) VALUES (";
-        $sql.= "'".$datos["cedula"] ."','" . $datos["nombre"] ."','" . $datos["apellidos"] ."',";
-        $sql.=$datos["telefono"] .",'" . $datos["email"] ."','" . $datos["nombre_de_usuario"]."','";
-        $sql.=$datos["contrasena"] ."','" . $datos["rol"] . "')";
-        $dbresponse = $conn->db->query($sql);
-
-
-        if ($dbresponse == true) {
-            echo 'Usuario insertado con exito';
-        } else {
-            echo 'Problemas al insertar el usuario.';
-        }
     }
 
 //Permite eliminar un usuario del sistema

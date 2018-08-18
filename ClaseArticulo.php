@@ -100,7 +100,7 @@ class ClaseArticulo {
         header("Location: ListarArticulo.php");
     }
 
-    function VerArticulos($filtro) {
+    function VerArticulos($filtro,$opcion) {
 
         $conn = Database::getInstance();
         $dbresponse = $conn->db->query("SELECT * FROM articulos");
@@ -109,8 +109,11 @@ class ClaseArticulo {
         foreach ($dbresponse->fetchAll(PDO::FETCH_ASSOC) as $articulo) {
             array_push($_SESSION["lista-articulos"], $articulo);
         }
-
-        header("Location: VerProductos.php");
+        if($opcion===1){
+          header("Location: VerProductos.php");
+        }else {
+          header("Location: home.php");
+        }
     }
 
     function ActualizarArticulo($datos) {
@@ -133,7 +136,7 @@ class ClaseArticulo {
 
     function BuscarArticulo($data) {
         $conn = Database::getInstance();
-        $dbresponse = $conn->db->query("SELECT * FROM articulos WHERE codigo='" . $data["articuloBusqueda"] . "' ");
+        $dbresponse = $conn->db->query("SELECT * FROM articulos WHERE codigo='" . $data["codigo"] . "'");
         $resultado = $dbresponse->fetch(PDO::FETCH_ASSOC);
         $valido = array();
 

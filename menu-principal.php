@@ -13,7 +13,10 @@ and open the template in the editor.
         <script src="js/Boostrapjs/bootstrap.bundle.min.js.map" type="text/javascript"></script>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/GeneralStyles.css" rel="stylesheet" type="text/css"/>
-        <?php session_start() ?>
+        <?php session_start();
+        include "./ClaseArticulo.php";
+        $Articulo = new ClaseArticulo();
+        ?>
     </head>
     <body>
 
@@ -34,7 +37,10 @@ and open the template in the editor.
                     <p><a class="btn btn-dark" href="menu-usuarios.php" >Administrar Usuarios</a></p><br>
                     <p><a class="btn btn-dark" href="menu-articulos.php">Administrar articulos</a></p><br>
                     <p><a class="btn btn-dark" href="menu-compras.php">Administar compras</a></p><br>
-                    <p><a class="btn btn-dark" href="home.php">Ir a inicio</a></p><br>
+                    <form method="post" class="mb-4" action="procesos.php">
+                        <input type="hidden" name="accion" value="home-articulos">
+                        <input type="submit" class="btn btn-dark" name="btnHome" value="Inicio">
+                    </form>
                     <form method="post" action="procesos.php">
                         <input type="hidden" name="accion" value="Logout">
                         <input type="submit" name="btnLogout" value="Cerrar sesion" class="btn btn-primary">
@@ -42,9 +48,10 @@ and open the template in the editor.
             </div>
         </div>
         <?php
-    } else if ($_SESSION["datos-usuario"]["rol"] == "comun") {
+    } else {
         // include "home.php";
-        header("Location: home.php");
+        $Articulo->VerArticulos($_POST["Filtro"],2);
+
 
         ?>  <!-- <br> -->
         <!-- <p><a href="MiPerfil.php" id="miPerfil">Mi Perfil</a></p><br> -->

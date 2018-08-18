@@ -87,7 +87,8 @@ class ClaseUsuario {
         $sql = "INSERT INTO usuario (cedula, nombre, apellidos, telefono,email,nombre_de_usuario,contrasena,rol) VALUES (";
         $sql .= "'" . $datos["cedula"] . "','" . $datos["nombre"] . "','" . $datos["apellidos"] . "',";
         $sql .= $datos["telefono"] . ",'" . $datos["email"] . "','" . $datos["nombre_de_usuario"] . "','";
-        $sql .= md5($datos["contrasena"]) . "','" . $datos["rol"] . "')";
+        $sql .= md5($datos["contrasena"]) . "','" . $datos["rol"] . "');";
+        $sql .= " INSERT INTO carrito (idusuario) VALUES ('" . $datos["cedula"] . "')";
         $dbresponse = $conn->db->query($sql);
         if ($dbresponse == true) {
             echo 'Usuario insertado con exito';
@@ -101,7 +102,8 @@ class ClaseUsuario {
         $sql = "INSERT INTO usuario (cedula, nombre, apellidos, telefono,email,nombre_de_usuario,contrasena,rol) VALUES (";
         $sql .= "'" . $datos["cedula"] . "','" . $datos["nombre"] . "','" . $datos["apellidos"] . "',";
         $sql .= $datos["telefono"] . ",'" . $datos["email"] . "','" . $datos["nombre_de_usuario"] . "','";
-        $sql .= md5($datos["contrasena"]) . "','" . $datos["rol"] . "')";
+        $sql .= md5($datos["contrasena"]) . "','" . $datos["rol"] . "');";
+        $sql .= " INSERT INTO carrito (idusuario) VALUES ('" . $datos["cedula"] . "')";
         $dbresponse = $conn->db->query($sql);
         if ($dbresponse == true) {
             echo 'Usuario insertado con exito';

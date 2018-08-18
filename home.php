@@ -41,34 +41,53 @@ include "./templates/navbar.php"
         </div>
     </div>
     <div class="row justify-content-md-center bg-true-light">
-      <h4 class="col-sm-10 mt-3 text-center"><strong>Nuevos Productos</strong></h4>
-      <?php for($i=0; $i<=6; $i+=1){ ?>
-    <div class="col-sm-3 mt-3 mb-3  ">
-        <div class="card shadow">
-        <img class="card-img-top img-fluid w-100" src="./img/Display1.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Producto 1</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga atque nisi vel, delectus labore inventore mollitia alias.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
+      <h4 class="col-sm-10 mt-3 mb-4 text-center"><strong>Nuevos Productos</strong></h4>
+      <?php
+      if (isset($_SESSION["lista-articulos"])) {
+          if (count($_SESSION["lista-articulos"]) > 0) {
+              foreach ($_SESSION["lista-articulos"] as $articulo) {
+                echo '<div class="col-sm-6 col-md-4 col-lg-3 mt-3">';
+                echo '<div class="card bg-dark text-white shadow">';
+                echo '<img class="card-img-top img-fluid w-100" style="max-height: 350px;" src='. $articulo["imagen"] .' alt="Card image cap">';
+                echo  '<div class="card-body">';
+                echo '<h5 class="card-title">'. $articulo["detalle"] .'</h5>';
+                echo  '<h5 class="card-text">'. $articulo["marca"] .'</h5><hr class="mb-3">';
+                echo  '<p class="card-text">'. $articulo["precio"] .' colones</p>';
+                echo  '<p class="card-text">'. $articulo["cantidad"] .' disponibles</p><hr>';
+                echo  '<a href="#" class="btn btn-primary">Comprar</a>';
+                echo    '</div>';
+                echo    '</div>';
+                echo '</div>';
+              }
+          }
+      }
+      ?>
     </div>
-  <?php } ?>
-    </div>
-    <div class="row justify-content-md-center bg-warning text-dark">
+    <div class="bg-true-light">
+      <br>
+</div>
+    <div class="row justify-content-md-center bg-warning text-dark card-columns">
       <h4 class="col-sm-10 mt-3 text-center"><strong>Mas vendidos</strong></h4>
-      <?php for($i=0; $i<=6; $i+=1){ ?>
-    <div class="col-sm-3  mt-3 mb-3">
-        <div class="card bg-dark text-white shadow">
-        <img class="card-img-top img-fluid w-100" src="./img/Display1.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Producto 1</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga atque nisi vel, delectus labore inventore mollitia alias.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-    </div>
-  <?php } ?>
+      <?php
+      if (isset($_SESSION["lista-articulos"])) {
+          if (count($_SESSION["lista-articulos"]) > 0) {
+              foreach ($_SESSION["lista-articulos"] as $articulo) {
+                echo '<div class="col-sm-6 col-md-4 col-lg-3 mt-3">';
+                echo '<div class="card bg-dark text-white shadow">';
+                echo '<img class="card-img-top img-fluid w-100" style="max-height: 350px;" src='. $articulo["imagen"] .' alt="Card image cap">';
+                echo  '<div class="card-body">';
+                echo '<h5 class="card-title">'. $articulo["detalle"] .'</h5>';
+                echo  '<h5 class="card-text">'. $articulo["marca"] .'</h5><hr class="mb-3">';
+                echo  '<p class="card-text">'. $articulo["precio"] .' colones</p>';
+                echo  '<p class="card-text">'. $articulo["cantidad"] .' disponibles</p><hr>';
+                echo  '<a href="#" class="btn btn-primary">Comprar</a>';
+                echo    '</div>';
+                echo    '</div>';
+                echo '</div>';
+              }
+          }
+      }
+      ?>
     </div>
     </div>
     <?php include './templates/footer.php'; ?>

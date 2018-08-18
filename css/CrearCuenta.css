@@ -10,7 +10,7 @@
     background-attachment: fixed;
 }
 
-body:before {
+/* body:before {
         content: "";
         width: 100%;
         min-height: 100vh;
@@ -19,7 +19,7 @@ body:before {
         left: 0;
         background: linear-gradient(90deg, #ffffff,#ffffff);
         opacity: 0.4;
-}
+} */
 
 #CrearCuenta {
     margin-top: 200px;

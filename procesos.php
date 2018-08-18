@@ -3,11 +3,15 @@
 include './ClaseUsuario.php';
 include './ClaseArticulo.php';
 include './ClaseCompra.php';
+include './ClaseCarrito.php';
+
 $accion = $_POST["accion"];
 
 $Usuario = new ClaseUsuario();
 $Articulo = new ClaseArticulo();
 $Compra = new ClaseCompra();
+$Carrito = new ClaseCarrito();
+
 switch ($accion) {
     case "Login":
         $retorno = $Usuario->Login($_POST);
@@ -60,16 +64,19 @@ switch ($accion) {
         $Articulo->ListarArticulo($_POST["Filtro"]);
         break;
     case "ver-articulos":
-        $Articulo->VerArticulos($_POST["Filtro"]);
+        $Articulo->VerArticulos($_POST["Filtro"],1);
+        break;
+    case "home-articulos":
+        $Articulo->VerArticulos($_POST["Filtro"],2);
         break;
     case "eliminar-articulo":
         $Articulo->EliminarArticulo($_POST);
         header("Location: menu-articulos.php");
         break;
 //COMPRA
-    case "crear-compra":
+    case "confirmar-compra":
         $Compra->CrearCompra($_POST);
-        header("Location: menu-compras.php");
+        header("Location: home.php");
         break;
     case "actualizar-compra":
         $retorno = $Compra->ActualizarCompra($_POST);
@@ -90,5 +97,28 @@ switch ($accion) {
         $Compra->EliminarCompra($_POST);
         header("Location: menu-compras.php");
         break;
+//Carro
+    case "add-producto":
+        $retorno = $Articulo->BuscarArticulo($_POST["codigo"]);
+        if($retorno["datos"]["codigo"]>0){
+
+          $Carrito->ItemACarro($_POST);
+        }
+      $Articulo->VerArticulos($_POST["Filtro"],1);
+      break;
+    case "ver-carrito":
+        session_start();
+        $Carrito->BuscarCarro($_SESSION["datos-usuario"]["cedula"]);
+      break;
+
+    case "quitar-producto":
+        $Carrito->ItemFueraCarro($_POST["codigo"],$_POST["cedula"]);
+        session_start();
+        $Carrito->BuscarCarro($_SESSION["datos-usuario"]["cedula"]);
+      break;
+    case "limpiar-carrito":
+        session_start();
+        $Carrito->EliminarCarro($_SESSION["datos-usuario"]["cedula"]);
+      break;
 }
 echo json_encode($retorno);

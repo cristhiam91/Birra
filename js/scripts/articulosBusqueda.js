@@ -12,12 +12,16 @@ $(function () {
             success: function (data) {
                 if (data.valido) {
                     _html = "<form id='frmActualizar' method='post'>";
-                    _html += "<input type='text' name='codigo' value='" + data.datos.codigo + "'><br>";
-                    _html += "<input type='text' name='marca' value='" + data.datos.marca + "'><br>";
-                    _html += "<input type='text' name='detalle' value='" + data.datos.detalle + "'><br>";
-                    _html += "<input type='text' name='precio' value='" + data.datos.precio + "'><br>";
-                    _html += "<input type='text' name='cantidad' value='" + data.datos.cantidad + "'><br>";
-                    _html += "<input type='text' name='imagen' value='" + data.datos.imagen + "'><br>";
+                    _html += "<div class='row'>";
+                    _html += "<input class='form-control col-4 mb-4' type='text' name='codigo' value='" + data.datos.codigo + "'><br>";
+                    _html += "<input class='form-control col-4 mb-4' type='text' name='marca' value='" + data.datos.marca + "'><br>";
+                    _html += "<input class='form-control col-4 mb-4' type='text' name='detalle' value='" + data.datos.detalle + "'><br>";
+                    _html += "</div>";
+                    _html += "<div class='row'>";
+                    _html += "<input class='form-control col-4 mb-4' type='text' name='precio' value='" + data.datos.precio + "'><br>";
+                    _html += "<input class='form-control col-4 mb-4' type='text' name='cantidad' value='" + data.datos.cantidad + "'><br>";
+                    _html += "<input class='form-control col-4 mb-4' type='text' name='imagen' value='" + data.datos.imagen + "'><br>";
+                    _html += "</div>";
                     _html += "</form>";
 
                     $(".frm-actualizar").append(_html);

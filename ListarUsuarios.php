@@ -19,49 +19,44 @@ and open the template in the editor.
 
     <body>
         <div class="container">
-        <form method="post" action="procesos.php">
-            
-                        <select name="Filtro">    
-                            <option value="2">Todos</option>
-                            <option value="admin">admin </option>
-                            <option value="comun">comun </option>
-                        </select><br>
-                        <input type="hidden" name="accion" value="listar-usuario">
-                        <input type="submit" name="btnListarUsuario" value="Listar">        
-        </form>
-        <?php
-        session_start();
-        if (isset($_SESSION["lista-usuarios"])) {
-            if (count($_SESSION["lista-usuarios"]) > 0) {
-                   echo '<div class="table-responsive">';
+            <form method="post" action="procesos.php">
+                <input type="hidden" name="accion" value="listar-usuario">
+                <input class="btn btn-success"  type="submit" name="btnListarUsuario" value="Listar">    
+                <p><a href="menu-usuarios.php"class="btn btn-primary" style="float: left;">Regresar</a></p><br>
+
+            </form>
+            <?php
+            session_start();
+            if (isset($_SESSION["lista-usuarios"])) {
+                if (count($_SESSION["lista-usuarios"]) > 0) {
+                    echo '<div class="table-responsive">';
                     echo '<table class="table table-warning">';
-                foreach ($_SESSION["lista-usuarios"] as $usuario) {
-                 
-                    echo '<thead>';
-                    echo '<tr>';
-                    echo '<th>Cedula</th>';
-                    echo '<th>Nombre</th>';
-                    echo '<th>Contraseña</th>';
-                    echo '<th>Rol</th>';
-                    echo '</tr>';
-                    echo '<tr>';
-                    echo '<tbody>';
-                    echo '</thead>';
-                    echo '<tr>';
-                    echo '<td>'.$usuario["cedula"].'</td>';
-                    echo '<td>'.$usuario["nombre"].'</td>';
-                    echo '<td>'.$usuario["contrasena"].'</td>';
-                    echo '<td>'.$usuario["rol"]. '</td>';
-                    echo '</tr>';
-                    echo '</tbody>';
-                
-                }
+                    foreach ($_SESSION["lista-usuarios"] as $usuario) {
+
+                        echo '<thead>';
+                        echo '<tr>';
+                        echo '<th>Cedula</th>';
+                        echo '<th>Nombre</th>';
+                        echo '<th>Contraseña</th>';
+                        echo '<th>Rol</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<tbody>';
+                        echo '</thead>';
+                        echo '<tr>';
+                        echo '<td>' . $usuario["cedula"] . '</td>';
+                        echo '<td>' . $usuario["nombre"] . '</td>';
+                        echo '<td>' . $usuario["contrasena"] . '</td>';
+                        echo '<td>' . $usuario["rol"] . '</td>';
+                        echo '</tr>';
+                        echo '</tbody>';
+                    }
                     echo" </table>";
-                   echo '</div">';
+                    echo '</div">';
+                }
             }
-        }
-        ?>
- 
-            </div>
+            ?>
+
+        </div>
     </body>
 </html>

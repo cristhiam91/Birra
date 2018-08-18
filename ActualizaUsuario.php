@@ -21,7 +21,8 @@
                 <br/>    
                 <br/>
                 <input type="button" id="btnBuscar" name="btnBuscar" value="Buscar" class="bnt btn-info" style="float: right">
-                  <br/>
+                <p><a href="menu-usuarios.php"class="btn btn-primary" style="float: left;">Regresar</a></p><br>
+                <br/>
             </form> 
             <div class="frm-actualizar" id="frmEliminarUsuario">
             </div>
